@@ -37,15 +37,19 @@
     createPlatform(0, game.world.height - 32, 3, 2); // DO NOT DELETE
 
     // example:
-    createPlatform(290, 500, 0.5);//grace token platform
+    createPlatform(290, 500, 0.5, 0.7);//grace token platform
     createPlatform(400, 630, 0.5);//lowest platform
     createPlatform(680, 580, 0.8);// second lowest
     createPlatform(800, 200, 0.5);//highest
     createPlatform(1, 450, 0.3);//max token platform
-    createPlatform(450, 330, 0.4);
+    createPlatform(670, 430, 0.4, 0.7);//kennedi token platform
+    createPlatform(500, 290, 0.5, 0.4);//second highest
+    createPlatform(820, 350, 0.4, 0.5);//small wall platform
+    //box jump
+    createPlatform(200, 200, 0.3, 0.2);//bottom piece
+    createPlatform(200, 70, 0.01, 4.3);//side bar
+    createPlatform(200, 70, 0.3, 0.2);//top piece
     
-    createPlatform(180, 280, 0.5);
-    createPlatform(500, 230, 0.3);//second highest
 
 
 
