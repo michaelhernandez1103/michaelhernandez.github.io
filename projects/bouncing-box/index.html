@@ -5,10 +5,18 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+		body {
+			background-image: url("images/background-image.jpg.url");
+ 			background-color: #cccccc;
+			-webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+		}
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(233, 236, 9);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -48,8 +56,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -62,7 +71,12 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			var positionX = 0;
+			var positionY = 0;
+			var points = 0;
+			var speed = 10;
+			var speedY = 10;
+			var boardHeight = jQuery(window).height();
 
 			
 			/* 
@@ -71,9 +85,28 @@
 			turn it around! 
 			*/
 			function update() {
+				/*We want to increase the value of positionX by 10 HERE*/
+				positionX += speed;
+				positionY += speedY;
+				moveBoxTo(positionX, positionY);
+				
 				
 
-			};
+				if(positionX > boardWidth - 70){
+					speed = -speed;
+				} else if(positionX < 0){
+					speed = -speed;
+				}
+				//moves the position of Y
+				if(positionY > boardHeight - 50){
+					speedY = -speedY;
+				} else if(positionY < 0){
+					speedY = -speedY;
+				}
+				
+				
+				}
+			
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -81,6 +114,18 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+				
+				positionX = 0;
+				//increases points by 1 
+				changeBoxText(points);
+				points = points + 1;
+				speed = speed + 3;
+
+				var randNum = Math.random() * boardWidth;
+				var randNumY = Math.random() * boardHeight;
+				positionX = randNum;
+				positionY = randNumY;
+
 				
 
 
