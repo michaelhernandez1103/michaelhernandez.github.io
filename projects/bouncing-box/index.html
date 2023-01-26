@@ -16,7 +16,9 @@
 		.box {
 			width: 70px;
 			height: 70px;
+			background-image: url("images/mrkrabs.png");
 			background-color: rgb(233, 236, 9);
+			color:rgb(16, 222, 16);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -98,9 +100,9 @@
 					speed = -speed;
 				}
 				//moves the position of Y
-				if(positionY > boardHeight - 50){
+				if(positionY > boardHeight - 70){
 					speedY = -speedY;
-				} else if(positionY < 0){
+				} else if(positionY < 10){
 					speedY = -speedY;
 				}
 				
@@ -120,6 +122,12 @@
 				changeBoxText(points);
 				points = points + 1;
 				speed = speed + 3;
+
+				if(speed > 0){
+					speed = speed + 3;
+				} else if(speed < 0){
+					speed = speed - 3;
+				}
 
 				var randNum = Math.random() * boardWidth;
 				var randNumY = Math.random() * boardHeight;
