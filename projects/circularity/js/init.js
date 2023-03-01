@@ -109,7 +109,7 @@ var init = function (window) {
             }//if the circles goes off the top of the screen then it will come back through the bottom
             if (circle.x < 0){
                 circle.x = canvas.width
-            }
+            }//if the circle goes off the left side of the screen, the circle will come back from the right side
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
         
