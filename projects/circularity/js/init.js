@@ -45,7 +45,7 @@ var init = function (window) {
             drawCircle();
             drawCircle();*/
 
-            for(var circlesDrawn = 0; circlesDrawn < 100; circlesDrawn++){
+            for(var circlesDrawn = 0; circlesDrawn < 300; circlesDrawn++){
                 drawCircle();
             }//draws circles until the condition is false, the codition is false once there has been 100 circles drawn
             

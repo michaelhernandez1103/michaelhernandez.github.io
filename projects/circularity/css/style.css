@@ -1,6 +1,6 @@
 body {
-    background: url("img/newbackground-image.jpg.url") no-repeat center center fixed;
-    background-color: #ffffff;
+    background: url("images/newbackgroung-image.jpg") no-repeat center center fixed;
+    background-color: #cccccc;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
