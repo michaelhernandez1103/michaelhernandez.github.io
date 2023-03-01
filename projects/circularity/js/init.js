@@ -19,6 +19,9 @@ var init = function (window) {
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
         
+        
+
+
         // TODO 1 : Declare and initialize our variables
             var circle;  //variable to hold 1 circle
             var circles = []; //variable to hold all circles in an array
