@@ -51,7 +51,7 @@ var level01 = function (window) {
         };
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
@@ -103,17 +103,17 @@ var level01 = function (window) {
 
         
 
-        
+        //created a function to create an enemy when called
         function createEnemy(x, y){
-            var enemy = game.createGameItem("enemy", 25);
-            var gameItem = draw.bitmap("img/level-1-enemy.png");
-            gameItem.x = -25;
-            gameItem.y = -115;
-            enemy.addChild(gameItem);
-            enemy.x = x;
-            enemy.y = y;
-            game.addGameItem(enemy);
-            enemy.velocityX = -2;
+            var enemy = game.createGameItem("enemy", 25);//creates a variable called enemy that assigns enemy as a game item and gives it a name and y value
+            var gameItem = draw.bitmap("img/level-1-enemy.png");//creates a variable called game item and assigns it the picture of the enemy
+            gameItem.x = -25;//assigns the game item an x value based on the hit zone
+            gameItem.y = -115;//assigns the game item a y value based on the hit zone
+            enemy.addChild(gameItem);//adds gameItem as a child of enemy
+            enemy.x = x;//gives the enemy an x value
+            enemy.y = y;//gives the enemy a y value
+            game.addGameItem(enemy);//adds enemy as a game item
+            enemy.velocityX = -2;//for movement gives the enemy a speed
             
 
             enemy.onPlayerCollision = function (){
@@ -129,15 +129,15 @@ var level01 = function (window) {
         
         
         function createEnemyTwo(x, y){
-            var enemy = game.createGameItem("enemy", 25);
-            var gameItem = draw.bitmap("img/level-2-enemy.png");
-            gameItem.x = -70;
-            gameItem.y = -80;
-            enemy.addChild(gameItem);
-            enemy.x = x;
-            enemy.y = y;
-            game.addGameItem(enemy);
-            enemy.velocityX = -2;
+            var enemy = game.createGameItem("enemy", 25);//creates a variable called enemy that assigns enemy as a game item and gives it a name and y value
+            var gameItem = draw.bitmap("img/level-2-enemy.png");//creates a variable called game item and assigns it the picture of the enemy
+            gameItem.x = -70;//assigns the game item an x value based on the hit zone
+            gameItem.y = -80;//assigns the game item a y value based on the hit zone
+            enemy.addChild(gameItem);//adds gameItem as a child of enemy
+            enemy.x = x;//gives the enemy an x value
+            enemy.y = y;//gives the enemy a y value
+            game.addGameItem(enemy);//adds enemy as a game item
+            enemy.velocityX = -2;//for movement gives the enemy a speed
             
 
             enemy.onPlayerCollision = function (){
@@ -152,15 +152,15 @@ var level01 = function (window) {
         }
 
         function createEnemyThree(x, y){
-            var enemy = game.createGameItem("enemy", 25);
-            var gameItem = draw.bitmap("img/Villain.png");
-            gameItem.x = -100;
-            gameItem.y = -80;
-            enemy.addChild(gameItem);
-            enemy.x = x;
-            enemy.y = y;
-            game.addGameItem(enemy);
-            enemy.velocityX = -2;
+            var enemy = game.createGameItem("enemy", 25);//creates a variable called enemy that assigns enemy as a game item and gives it a name and y value
+            var gameItem = draw.bitmap("img/Villain.png");//creates a variable called game item and assigns it the picture of the enemy
+            gameItem.x = -100;//assigns the game item an x value based on the hit zone
+            gameItem.y = -80;//assigns the game item a y value based on the hit zone
+            enemy.addChild(gameItem);//adds gameItem as a child of enemy
+            enemy.x = x;//gives the enemy an x value
+            enemy.y = y;//gives the enemy a y value
+            game.addGameItem(enemy);//adds enemy as a game item
+            enemy.velocityX = -2;//for movement gives the enemy a speed
             
 
             enemy.onPlayerCollision = function (){
@@ -176,15 +176,15 @@ var level01 = function (window) {
         
 
         function createReward(x, y){
-            var reward = game.createGameItem("reward", 25);
-            var gameItem = draw.bitmap("img/reward.png");
-            gameItem.x = -25;
-            gameItem.y = -25;
-            reward.addChild(gameItem);
-            reward.x = x;
-            reward.y = y;
-            game.addGameItem(reward);
-            reward.velocityX = -2;
+            var reward = game.createGameItem("reward", 25);//creates a variable called reward that assigns enemy as a game item and gives it a name and y value
+            var gameItem = draw.bitmap("img/reward.png");//creates a variable called game item and assigns it the picture of the reward
+            gameItem.x = -25;//assigns the game item an x value based on the hit zone
+            gameItem.y = -25;//assigns the game item a y value based on the hit zone
+            reward.addChild(gameItem);//adds gameItem as a child of reward
+            reward.x = x;//gives the reward an x value
+            reward.y = y;//gives the reward a y value
+            game.addGameItem(reward);//adds reward as a game item
+            reward.velocityX = -2;//for movement gives the reward a speed
 
             reward.onPlayerCollision = function (){
                 game.increaseScore(10000);

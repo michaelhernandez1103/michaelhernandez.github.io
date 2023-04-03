@@ -66,10 +66,10 @@ var background = function (window) {
                 var buildingHeights = [150, 120, 300, 225, 100];//created an array that assigned each building a different height
                 var buildingColors = ['LightBlue', 'Gray', 'Purple', 'Red', 'green'];//created an array that assigned each building a different color
                 var building = draw.rect(75, buildingHeights[i], buildingColors[i], "Black", 1);//created a variable that draws a building and gives it a size, color, and height
-                building.x = 200 * i;
-                building.y = groundY - buildingHeights[i];
-                background.addChild(building);
-                buildings.push(building);
+                building.x = 200 * i;//gives buildings an x value
+                building.y = groundY - buildingHeights[i];//gives buildings a y value
+                background.addChild(building);//adds building as a child of background
+                buildings.push(building);//pushes the buidlings onto the screen
               }*/
             
             // TODO 4: Part 1 - Add a tree
