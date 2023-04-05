@@ -16,34 +16,35 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
+                //every call to create a basketball. gives the basketball an x and a y position
                 { "type": "basketball", "x": 400, "y": groundY - 125 },
                 { "type": "basketball", "x": 600, "y": groundY - 10},
                 { "type": "basketball", "x": 800, "y": groundY - 125},
                 { "type": "basketball", "x": 1200, "y": groundY - 125},
 
-
+                //every call to create the first enemy, gives the enemy an x and y position
                 { "type": "enemy", "x": 1700, "y": groundY - 50},
                 { "type": "enemy", "x": 2000, "y": groundY - 50},
                 { "type": "enemy", "x": 2200, "y": groundY - 50},
 
-
+                //every call to create a nike symbol, gives the nike symbol an x and a y position
                 { "type": "nike", "x": 2500, "y": groundY - 10},
                 { "type": "nike", "x": 2700, "y": groundY - 10},
                 { "type": "nike", "x": 3000, "y": groundY - 10},
                 { "type": "nike", "x": 3300, "y": groundY - 10},
-
+                //every call to create enemy2, gives each enemy2 an x and y position
                 { "type": "enemy2", "x": 3600, "y": groundY - 50},
                 { "type": "enemy2", "x": 4000, "y": groundY - 50},
                 { "type": "enemy2", "x": 4200, "y": groundY - 50},
-
+                //every call to create a fist, gives each fist an x and y position
                 { "type": "fist", "x": 4600, "y": groundY - 10},
                 { "type": "fist", "x": 4900, "y": groundY - 120},
                 { "type": "fist", "x": 5100, "y": groundY - 10},
                 { "type": "fist", "x": 5400, "y": groundY - 120},
-
+                //every call to create enemy3, gives enemy3 an x and y position
                 { "type": "enemy3", "x": 5800, "y": groundY - 50},
                 
-
+                //every call to create the reward, gives the reward an x and y position
                 { "type": "reward", "x": 6200, "y": groundY - 75},
 
                 
@@ -115,11 +116,11 @@ var level01 = function (window) {
             game.addGameItem(enemy);//adds enemy as a game item
             enemy.velocityX = -2;//for movement gives the enemy a speed
             
-
+            //tells the program that once hallebot hits the enemy it takes off 15 health
             enemy.onPlayerCollision = function (){
                 game.changeIntegrity(-15);
             }
-
+            //tells the program that when hallebot hits the enemy with his blasts, the enemy flies to 900, 0 and halle's score increases by 20
             enemy.onProjectileCollision = function (){
                 enemy.flyTo(900, 0);
                 game.increaseScore(20);
@@ -139,11 +140,11 @@ var level01 = function (window) {
             game.addGameItem(enemy);//adds enemy as a game item
             enemy.velocityX = -2;//for movement gives the enemy a speed
             
-
+            //tells the program that once hallebot hits the enemy it takes off 25 health
             enemy.onPlayerCollision = function (){
                 game.changeIntegrity(-25);
             }
-
+            //tells the program that when hallebot hits the enemy with his blasts, the enemy flies to 900, 0 and halle's score increases by 30
             enemy.onProjectileCollision = function (){
                 enemy.flyTo(900, 0);
                 game.increaseScore(30);
@@ -162,11 +163,11 @@ var level01 = function (window) {
             game.addGameItem(enemy);//adds enemy as a game item
             enemy.velocityX = -2;//for movement gives the enemy a speed
             
-
+            //tells the program that once hallebot hits the enemy it takes off 70 health
             enemy.onPlayerCollision = function (){
                 game.changeIntegrity(-70);
             }
-
+            //tells the program that when hallebot hits the enemy with his blasts, the enemy flies to 900, 0 and halle's score increases by 150
             enemy.onProjectileCollision = function (){
                 enemy.flyTo(900, 0);
                 game.increaseScore(150);
@@ -186,6 +187,7 @@ var level01 = function (window) {
             game.addGameItem(reward);//adds reward as a game item
             reward.velocityX = -2;//for movement gives the reward a speed
 
+            //tells the program that once hallebot hits the reward, her score will increase by 10000 and the reward with shrink
             reward.onPlayerCollision = function (){
                 game.increaseScore(10000);
                 reward.shrink();
@@ -193,30 +195,30 @@ var level01 = function (window) {
 
         }
 
-
+        //iterates over the gameItems array inside the levelData object
         for (var i = 0; i < levelData.gameItems.length; i++){
             var gameItem = levelData.gameItems[i];
 
             if(gameItem.type === "basketball"){
-                createBasketball(gameItem.x, gameItem.y);
+                createBasketball(gameItem.x, gameItem.y);//says that if the gameItem is a basketball, to create a basketball
             }
             if(gameItem.type === "enemy"){
-                createEnemy(gameItem.x, gameItem.y);
+                createEnemy(gameItem.x, gameItem.y);//says that if the gameItem is an enemy, to create an enemy
             }
             if(gameItem.type === "reward"){
-                createReward(gameItem.x, gameItem.y);
+                createReward(gameItem.x, gameItem.y);//says that if the gameItem is a reward, to create a reward
             }
             if(gameItem.type === "nike"){
-                createNike(gameItem.x, gameItem.y);
+                createNike(gameItem.x, gameItem.y);//says that if the gameItem is a nike symbol, to create a nike symbol
             }
             if(gameItem.type === "fist"){
-                createFist(gameItem.x, gameItem.y);
+                createFist(gameItem.x, gameItem.y);//says that if the gameItem is a fist, to create a fist
             }
             if(gameItem.type === "enemy2"){
-                createEnemyTwo(gameItem.x, gameItem.y);
+                createEnemyTwo(gameItem.x, gameItem.y);//says that if the gameItem is enemy2, to create enemy2
             }
             if(gameItem.type === "enemy3"){
-                createEnemyThree(gameItem.x, gameItem.y);
+                createEnemyThree(gameItem.x, gameItem.y);//says that if the gameItem is enemy3 , to create enemy3
             }
             
         }
