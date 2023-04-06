@@ -28,10 +28,10 @@ var level01 = function (window) {
                 { "type": "enemy", "x": 2200, "y": groundY - 50},
 
                 //every call to create a nike symbol, gives the nike symbol an x and a y position
-                { "type": "nike", "x": 2500, "y": groundY - 10},
-                { "type": "nike", "x": 2700, "y": groundY - 10},
-                { "type": "nike", "x": 3000, "y": groundY - 10},
-                { "type": "nike", "x": 3300, "y": groundY - 10},
+                { "type": "nike", "x": 2500, "y": groundY - 7},
+                { "type": "nike", "x": 2700, "y": groundY - 7},
+                { "type": "nike", "x": 3000, "y": groundY - 7},
+                { "type": "nike", "x": 3300, "y": groundY - 7},
                 //every call to create enemy2, gives each enemy2 an x and y position
                 { "type": "enemy2", "x": 3600, "y": groundY - 50},
                 { "type": "enemy2", "x": 4000, "y": groundY - 50},
